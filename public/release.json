@@ -1,6 +1,6 @@
 {
   "version": "0.5.2",
-  "downloadsPublic": false,
+  "downloadsPublic": true,
   "releaseUrl": "https://github.com/connorgentile113-png/Kindred-Website/releases/tag/v0.5.2",
   "iso": {
     "url": "https://github.com/connorgentile113-png/Kindred-Website/releases/download/v0.5.2/kindred-os-0.5.2-amd64.iso",
