@@ -1,0 +1,9 @@
+node_modules/
+.firebase/
+*.log
+__pycache__/
+*.pyc
+.env*
+*service-account*.json
+*firebase-adminsdk*.json
+artifacts/

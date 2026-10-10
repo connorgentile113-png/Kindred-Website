@@ -1,0 +1,8 @@
+{
+  "latest": "0.5.2",
+  "minimum": "0.4.0",
+  "url": "https://github.com/connorgentile113-png/Kindred-Website/releases/tag/v0.5.2",
+  "archive": "https://github.com/connorgentile113-png/Kindred-Website/releases/download/v0.5.2/kindred-update-0.5.2.tar.gz",
+  "sha256": "725220fecd901989b9d0ab4e15ae4d33d1be3eb58e9118ca01bdf75b3475ca1f",
+  "notes": "Public downloads and updater source handoff. Existing 0.5.1 and earlier installations require the one-time administrator upgrade."
+}

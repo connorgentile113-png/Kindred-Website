@@ -1,0 +1,17 @@
+{
+  "version": "0.5.2",
+  "downloadsPublic": false,
+  "releaseUrl": "https://github.com/connorgentile113-png/Kindred-Website/releases/tag/v0.5.2",
+  "iso": {
+    "url": "https://github.com/connorgentile113-png/Kindred-Website/releases/download/v0.5.2/kindred-os-0.5.2-amd64.iso",
+    "checksumUrl": "https://github.com/connorgentile113-png/Kindred-Website/releases/download/v0.5.2/kindred-os-0.5.2-amd64.iso.sha256",
+    "sizeBytes": 1138622464,
+    "sha256": "7c1c3ada73687f297b9feeb812c7cbaeaa843be6ca39a593df43e0f05fa28ecf"
+  },
+  "application": {
+    "url": "https://github.com/connorgentile113-png/Kindred-Website/releases/download/v0.5.2/kindred-update-0.5.2.tar.gz",
+    "checksumUrl": "https://github.com/connorgentile113-png/Kindred-Website/releases/download/v0.5.2/kindred-update-0.5.2.tar.gz.sha256",
+    "sha256": "725220fecd901989b9d0ab4e15ae4d33d1be3eb58e9118ca01bdf75b3475ca1f",
+    "version": "0.5.2"
+  }
+}
