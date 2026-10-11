@@ -1,0 +1,15 @@
+{
+  "name": "kindred-os",
+  "private": true,
+  "version": "0.5.3",
+  "scripts": {
+    "start": "bash scripts/run-preview.sh",
+    "native": "bash scripts/run-native.sh",
+    "test": "node --test tests/*.test.mjs",
+    "test:native": "bash scripts/run-native.sh --smoke-test",
+    "deploy": "bash scripts/deploy-firebase.sh",
+    "update": "bash scripts/kindred-update.sh --check",
+    "test:updates": "python3 -m unittest discover -s tests -p \"update_test.py\"",
+    "release:update": "bash scripts/publish-update.sh"
+  }
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A gentle practice — Kindred OS</title>
+  <meta name="description" content="Build confidence with a few gentle exercises. Practice using sample items, with clear guidance and a way to undo.">
+  <meta name="theme-color" content="#23493d">
+  <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/site.css"><script src="/site.js" defer></script><script src="/practice.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner"><a class="back" href="/">← Home</a><a class="brand" href="/"><img src="/assets/mark.svg" width="36" height="36" alt="">Kindred<span class="brand-os">OS</span></a><nav aria-label="Main navigation"><a href="/#questions">Questions</a><a class="nav-download" href="/install">Get Kindred</a></nav></div></header>
+<div class="reading-bar" role="region" aria-label="Reading preferences" hidden data-reading-bar><div class="wrap">
+  <span class="reading-intro">Make yourself comfortable</span>
+  <details class="reading-controls"><summary>Text size &amp; contrast</summary>
+    <div class="reading-options"><fieldset><legend>Text size</legend><div class="choice-row">
+      <button type="button" data-reading-size="comfortable" aria-pressed="true">Comfortable</button>
+      <button type="button" data-reading-size="larger" aria-pressed="false">Larger</button>
+      <button type="button" data-reading-size="largest" aria-pressed="false">Largest</button>
+    </div></fieldset>
+    <button type="button" data-reading-contrast aria-pressed="false">Stronger contrast</button>
+    <button type="button" data-reading-reset>Reset reading settings</button>
+    <p class="small-note">These choices change this website’s appearance. You can reset them at any time.</p>
+    <p class="small-note" role="status" data-reading-status></p></div>
+  </details><a href="/practice">Try a gentle practice</a>
+</div></div>
+
+
+  <main id="main" class="practice-main wrap">
+    <div class="download-heading"><p class="eyebrow">ONE SMALL STEP AT A TIME</p><h1>A gentle <em>practice.</em></h1><p>Try something, go back, try again. These are website exercises with sample items, rather than a working Kindred desktop.</p></div>
+    <div class="practice-promise"><strong>Your own files stay untouched.</strong><p>Nothing here sends a message, installs software, or opens your personal files. Practice notes last only until you reload or leave this page.</p></div>
+    <noscript><p class="important-note">Turn on JavaScript in your browser to use these exercises. You can still <a href="/">explore the website</a> or <a href="/guide">read the installation guide</a>.</p></noscript>
+    <section class="practice-shell" data-practice hidden aria-label="Practice activities">
+      <div class="practice-toolbar"><button type="button" class="secondary-button" data-practice-home>← Practice home</button><span class="practice-badge">Practice only</span></div>
+      <div data-practice-panel="home">
+        <h2 tabindex="-1">What would you like to try?</h2><p>Choose any activity. There’s no timer and no score.</p>
+        <div class="practice-grid">
+          <button type="button" class="practice-card" data-practice-open="message"><span class="practice-icon" aria-hidden="true">✉</span><strong>Read a message</strong><span>Open an example and try a reply.</span><span class="practice-start">Start here →</span></button>
+          <button type="button" class="practice-card" data-practice-open="note"><span class="practice-icon" aria-hidden="true">✎</span><strong>Write a little note</strong><span>Try saving, removing, and Undo.</span><span class="practice-start">Have a go →</span></button>
+          <button type="button" class="practice-card" data-practice-open="reading"><span class="practice-icon" aria-hidden="true">Aa</span><strong>Make words easier to read</strong><span>Try larger text and stronger contrast.</span><span class="practice-start">Get comfortable →</span></button>
+        </div>
+      </div>
+      <div data-practice-panel="message" hidden>
+        <p class="eyebrow">PRACTICE · READ A MESSAGE</p><h2 tabindex="-1">A little hello.</h2><p class="step-guide">1. Read this example. 2. Choose a reply if you’d like.</p>
+        <article class="sample-message"><h3>From: Alex (an example)</h3><p>Hello! I hope you’re having a lovely day. Shall we have a cup of tea together soon?</p></article>
+        <button type="button" class="button" data-practice-reply>Try a reply</button>
+        <div class="sample-reply" hidden><p><strong>Your example reply:</strong> “That sounds lovely. Let’s arrange a day.”</p><p>In a real email app, Send delivers your message. Here, you can practice without sending anything.</p><button type="button" class="button" data-practice-send>Practice sending</button></div>
+      </div>
+      <div data-practice-panel="note" hidden>
+        <p class="eyebrow">PRACTICE · WRITE A NOTE</p><h2 tabindex="-1">A note for yourself.</h2><p class="step-guide">Type a few words, then choose Save practice note. You can also try removing it and using Undo.</p>
+        <div data-note-editor><label class="field-label" for="practice-note">Your practice note</label><textarea id="practice-note" rows="4" maxlength="2000" spellcheck="true">Remember to enjoy a cup of tea.</textarea><div class="actions"><button type="button" class="button" data-practice-save>Save practice note</button><button type="button" class="secondary-button" data-practice-remove>Remove practice note</button></div></div>
+        <div data-note-removed hidden><p>The practice note is removed. Its words are kept here so you can bring it back.</p><button type="button" class="button" data-practice-undo>Undo · Bring my note back</button></div>
+      </div>
+      <div data-practice-panel="reading" hidden>
+        <p class="eyebrow">PRACTICE · GET COMFORTABLE</p><h2 tabindex="-1">Words with room to breathe.</h2><p>Use Text size &amp; contrast above to make the words larger. Try stronger contrast, too. Choose Reset reading settings whenever you want to return to the starting appearance.</p><p class="reading-sample">There’s no hurry. A little change can make reading feel a lot easier.</p><button type="button" class="button" data-practice-reading>Show reading controls</button>
+      </div>
+      <p class="practice-status" role="status" aria-live="polite" aria-atomic="true" data-practice-status></p>
+    </section>
+    <aside class="practice-next"><h2>A small step is a good start.</h2><p>You can come back and practice as often as you like. When you’re ready, look at the actual desktop screenshots or read the installation guide with someone you trust.</p><div class="actions"><a class="quiet-link" href="/#see-kindred">See the actual desktop →</a><a class="quiet-link" href="/guide">Read the installation guide →</a></div></aside>
+  </main>
+  <dialog class="confirmation" id="practice-confirm" aria-labelledby="practice-confirm-title" aria-describedby="practice-confirm-description"><h2 id="practice-confirm-title">Remove this practice note?</h2><p id="practice-confirm-description">Only this sample note will be removed. You can bring it back with Undo. Your own files stay untouched.</p><form method="dialog"><div class="actions"><button class="button" value="cancel" autofocus>Keep my note</button><button class="secondary-button" value="remove">Remove practice note</button></div></form></dialog>
+  <footer class="site-footer"><div><a class="brand" href="/">Kindred OS</a><p>A little more familiar. A little more you.</p></div><div class="footer-links"><a href="/guide">Installation guide</a><a href="/install">Downloads</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,14 @@
+[Unit]
+Description=Check for Kindred OS updates automatically
+RefuseManualStart=no
+
+[Timer]
+# Check shortly after boot and then once a day, with a small random delay so
+# many computers do not all ask at the same moment.
+OnBootSec=5min
+OnUnitActiveSec=1d
+RandomizedDelaySec=30min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -11,7 +11,7 @@ class Handler(SimpleHTTPRequestHandler):
     def do_GET(self):
         path = urlsplit(self.path).path
         if path == '/updates/version': self.path = '/updates/version.json'
-        elif path in ['/install', '/guide']: self.path = path + '.html'
+        elif path in ['/install', '/guide', '/practice']: self.path = path + '.html'
         super().do_GET()
     def end_headers(self):
         self.send_header('Cache-Control', 'no-store')

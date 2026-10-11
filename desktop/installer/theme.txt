@@ -1,0 +1,18 @@
+title-text: "Kindred OS — Welcome home"
+title-font: "DejaVu Sans Regular 28"
+title-color: "#eaf2eb"
+desktop-color: "#172b24"
+message-color: "#eaf2eb"
+message-bg-color: "#172b24"
++ boot_menu {
+  left = 8%
+  top = 28%
+  width = 84%
+  height = 45%
+  item_font = "DejaVu Sans Regular 28"
+  item_color = "#dce8df"
+  selected_item_color = "#a5dfb7"
+  item_height = 68
+  item_padding = 12
+  item_spacing = 12
+}

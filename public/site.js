@@ -36,3 +36,34 @@ fetch('/release.json', {cache: 'no-store'}).then(response => {
   if (!/^\d+\.\d+\.\d+$/.test(appVersion)) throw new Error('Invalid application release');
   text('[data-upgrade-command]', `sha256sum -c kindred-update-${appVersion}.tar.gz.sha256\nmkdir kindred-upgrade\ntar xzf kindred-update-${appVersion}.tar.gz -C kindred-upgrade\ncd kindred-upgrade\nsudo bash scripts/upgrade-existing.sh`);
 }).catch(() => { text('#release-status', 'Release information could not load. Use the release notes to find downloads and checksums.'); });
+
+// Only appearance is stored. Blocked browser storage still permits reading controls.
+const readingKey = 'kindred-website-reading-v1';
+let reading = {size: 'comfortable', contrast: false};
+let readingStorageAvailable = true;
+try {
+  const saved = JSON.parse(localStorage.getItem(readingKey));
+  if (saved && ['comfortable', 'larger', 'largest'].includes(saved.size)) {
+    reading = {size: saved.size, contrast: saved.contrast === true};
+  }
+} catch (_) { readingStorageAvailable = false; }
+function applyReading(saveSettings = false) {
+  document.documentElement.dataset.readingSize = reading.size;
+  document.documentElement.dataset.readingContrast = String(reading.contrast);
+  for (const button of document.querySelectorAll('button[data-reading-size]')) {
+    button.setAttribute('aria-pressed', String(button.dataset.readingSize === reading.size));
+  }
+  document.querySelector('button[data-reading-contrast]')?.setAttribute('aria-pressed', String(reading.contrast));
+  if (saveSettings) {
+    try { localStorage.setItem(readingKey, JSON.stringify(reading)); }
+    catch (_) { readingStorageAvailable = false; }
+    text('[data-reading-status]', `Text: ${reading.size}. Stronger contrast: ${reading.contrast ? 'on' : 'off'}.${readingStorageAvailable ? ' Reading settings saved on this browser.' : ' Settings work on this page, but this browser cannot save them.'}`);
+  }
+}
+applyReading();
+for (const bar of document.querySelectorAll('[data-reading-bar]')) bar.hidden = false;
+for (const button of document.querySelectorAll('button[data-reading-size]')) {
+  button.addEventListener('click', () => { reading.size = button.dataset.readingSize; applyReading(true); });
+}
+ document.querySelector('button[data-reading-contrast]')?.addEventListener('click', () => { reading.contrast = !reading.contrast; applyReading(true); });
+document.querySelector('[data-reading-reset]')?.addEventListener('click', () => { reading = {size: 'comfortable', contrast: false}; applyReading(true); });
