@@ -67,3 +67,27 @@ for (const button of document.querySelectorAll('button[data-reading-size]')) {
 }
  document.querySelector('button[data-reading-contrast]')?.addEventListener('click', () => { reading.contrast = !reading.contrast; applyReading(true); });
 document.querySelector('[data-reading-reset]')?.addEventListener('click', () => { reading = {size: 'comfortable', contrast: false}; applyReading(true); });
+
+// Development builds are separate assets with their own status and limits.
+fetch('/release.json', {cache: 'no-store'}).then(response => {
+  if (!response.ok) throw new Error('Release information unavailable');
+  return response.json();
+}).then(release => {
+  const development = release.development;
+  const downloads = development && development.downloads && typeof development.downloads === 'object'
+    ? development.downloads : null;
+  let available = 0;
+  for (const link of document.querySelectorAll('[data-dev-download], [data-dev-checksum]')) {
+    const key = link.dataset.devDownload || link.dataset.devChecksum;
+    const item = downloads && downloads[key];
+    const url = item && (link.dataset.devDownload ? item.url : item.checksumUrl);
+    if (!safeReleaseLink(url)) continue;
+    link.href = url;
+    link.removeAttribute('aria-disabled');
+    if (link.dataset.devDownload) available += 1;
+  }
+  if (available) text('#development-status', 'Unsigned development builds are attached to the public pre-release. Check the checksum before opening one; these builds do not install updates by themselves.');
+  else text('#development-status', 'Development downloads are not available right now. Check the release notes for current builds.');
+  if (development && safeReleaseLink(development.releaseUrl))
+    document.querySelectorAll('[data-dev-release-link]').forEach(link => { link.href = development.releaseUrl; });
+}).catch(() => text('#development-status', 'Development download information could not load. Check the release notes instead.'));

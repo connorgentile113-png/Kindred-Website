@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="description" content="Connect a Kindred device with someone you trust. Sign in, pair together and manage only the settings they allow.">
+ <meta name="referrer" content="no-referrer"><meta name="robots" content="noindex">
+ <title>Your people, connected — Kindred supporter portal</title>
+ <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
+ <link rel="stylesheet" href="/site.css"><link rel="stylesheet" href="/supporter.css">
+ <script src="/site.js" defer></script><script type="module" src="/supporter.js"></script>
+</head>
+<body>
+ <a class="skip" href="#main">Skip to content</a>
+ <header class="site-header"><div class="header-inner">
+  <a class="brand" href="/"><img src="/assets/mark.svg" width="36" height="36" alt=""><span>Kindred<span class="brand-os"> OS</span></span></a>
+  <nav aria-label="Main navigation"><a href="/install">Install Kindred</a><a href="/supporter" aria-current="page">Supporter portal</a></nav>
+ </div></header>
+ <main id="main" class="portal-wrap">
+  <div class="portal-intro"><p class="eyebrow">A little help, from your people</p><h1>Close by.<br><em>Even from afar.</em></h1><p>Pair a device together. Help with the everyday. The person using Kindred stays in control.</p></div>
+  <p class="notice">Development preview. Current public Kindred downloads cannot connect to this portal yet. Full device support is still being validated.</p>
+  <p id="demo-notice" class="notice" hidden>Local test environment. Use test accounts only. No production devices or emails are connected.</p>
+  <p id="portal-message" class="notice" role="status" aria-live="polite">Preparing your sign-in…</p>
+  <noscript><p class="notice">Enable JavaScript to use the supporter portal.</p></noscript>
+  <section id="sign-in" class="portal-card auth-card" aria-labelledby="sign-in-title" hidden>
+   <div><p class="eyebrow">Your supporter account</p><h2 id="sign-in-title">Welcome back.</h2><p>Use your own account. You’ll confirm the connection together on both screens.</p>
+    <button id="google-sign-in" class="portal-button">Continue with Google</button>
+    <div class="auth-divider">or use email</div>
+    <form id="email-form">
+     <label for="email">Email address</label><input id="email" type="email" autocomplete="username" maxlength="320" required>
+     <label for="password">Password</label><input id="password" type="password" autocomplete="current-password" minlength="6" maxlength="4096" required>
+     <div class="button-row"><button class="portal-button" type="submit">Sign in</button><button id="create-account" class="portal-button secondary" type="button">Create account</button></div>
+    </form><button id="reset-password" class="text-button">Forgot password?</button>
+   </div>
+   <aside class="pair-note"><span class="note-number">01 / Together first</span><h3>A connection you both choose.</h3><p>You create a code. They enter it in Kindred. Then you compare six words and both approve.</p><hr><p>Help is limited to approved settings and app actions. This portal does not show their screen, documents, passwords or microphone.</p><p>They can stop support from their device at any time.</p></aside>
+  </section>
+  <section id="account" class="account-strip" hidden><div><span class="eyebrow">Signed in as</span><p id="account-email"></p></div><button id="sign-out" class="portal-button secondary">Sign out</button></section>
+  <section id="verification" class="portal-card" hidden><h2>One small check.</h2><p>Verify your email address before connecting a device. Open the verification email, then come back here.</p><div class="button-row"><button id="send-verification" class="portal-button">Send verification email</button><button id="check-verification" class="portal-button secondary">I’ve verified my email</button></div></section>
+  <div id="dashboard" hidden>
+   <section class="connection-heading"><div><p class="eyebrow">Your circle</p><h2>Connected devices.</h2></div><button id="new-code" class="portal-button">＋ Connect a device</button></section>
+   <section id="setup-code" class="portal-card code-card" hidden aria-labelledby="code-title"><div><p class="eyebrow">A one-time invitation</p><h3 id="code-title">Enter this in Kindred.</h3><p>On their device, connect to Wi-Fi, then open <strong>Settings → Supporter</strong>. Share this code only with that person.</p><output id="code-value" class="setup-code"></output><p id="code-expiry"></p><p class="small-copy">The code expires after ten minutes and works once. Both of you still need to approve. Closing this page hides the code; it does not cancel an invitation.</p></div><button id="cancel-code" class="portal-button secondary">Cancel invitation</button></section>
+   <div id="device-list" class="device-list" aria-label="Your devices"></div>
+   <section class="history-section" aria-labelledby="history-title"><div class="connection-heading"><h2 id="history-title">A clear record.</h2><button id="refresh" class="portal-button secondary">Refresh</button></div><p class="small-copy">This page shows connection events and actions from the last 90 days. Only a device’s confirmed result is shown as completed.</p><ol id="audit-list" class="audit-list"></ol></section>
+  </div>
+  <section class="portal-footnote"><h3>Kindness, with boundaries.</h3><p>Connections expire after 90 days. Changes need an online, consenting device. Revoking access blocks new actions immediately; an action already running may finish. You can’t use this portal to read private files, manage keys or run arbitrary commands.</p></section>
+ </main>
+ <dialog id="reauth-dialog" class="portal-dialog"><form id="reauth-form"><h2>Confirm it’s you.</h2><p id="reauth-detail">Sign in again before changing this connection.</p><label id="reauth-label" for="reauth-password">Your password</label><input id="reauth-password" type="password" autocomplete="current-password" maxlength="4096"><p id="reauth-error" role="alert"></p><div class="button-row"><button id="reauth-confirm" class="portal-button" type="submit">Confirm</button><button id="reauth-cancel" class="portal-button secondary" type="button">Cancel</button></div></form></dialog>
+ <dialog id="revoke-dialog" class="portal-dialog"><h2>End this connection?</h2><p id="revoke-detail"></p><p>New actions will be blocked immediately. To reconnect later, you’ll need a new code and approval on both screens.</p><div class="button-row"><button id="revoke-confirm" class="portal-button danger">Revoke access</button><button id="revoke-cancel" class="portal-button secondary">Keep connection</button></div></dialog>
+ <footer class="portal-footer"><a href="/">Kindred OS</a><a href="/policy">Privacy</a><a href="/install">Setup guidance</a></footer>
+</body></html>

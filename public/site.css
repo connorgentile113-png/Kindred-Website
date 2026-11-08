@@ -238,3 +238,20 @@ html[data-reading-contrast="true"] .confidence-cards article,html[data-reading-c
 @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation:none!important; transition:none!important; } }
 h1,h2,h3,h4,strong,.brand { overflow-wrap:anywhere; }
 .showcase-heading>div,.hero-copy,.confidence>div,.download-section>div,.everyday>div,.questions>div { min-width:0; max-width:100%; }
+
+/* Per-device development downloads keep their own links and limits. */
+.platforms-section{padding-block:80px;border-top:1px solid var(--line,#d9d3c6)}
+.platform-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin:32px 0}
+.platform-grid article{display:flex;flex-direction:column;gap:10px;padding:28px;border:1px solid var(--line,#d9d3c6);border-radius:18px;background:#fffdf8}
+.platform-grid h3{margin:6px 0;font-size:30px}
+.platform-grid p{font-size:16px;margin:0}
+.platform-grid a{font-size:15px;font-weight:bold}
+.status-tag{display:inline-block;font-size:11px;letter-spacing:.07em;font-weight:bold;color:#23493d}
+.dev-download{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;margin:6px 0;font-size:15px}
+.dev-download a:first-child{font-weight:bold}
+.dev-download a[aria-disabled='true']{opacity:.55}
+.dev-download .small-note{margin:0;font-size:13px}
+.platform-grid .small-note{margin-top:auto}
+.supporter-invitation{display:grid;grid-template-columns:1fr 1.3fr;gap:50px;border-block:1px solid var(--line,#d9d3c6);padding:48px 0;margin-top:48px}
+.supporter-invitation h3{font-size:36px}
+@media(max-width:800px){.platform-grid{grid-template-columns:1fr}.supporter-invitation{grid-template-columns:1fr;gap:26px}}
